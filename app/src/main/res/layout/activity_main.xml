@@ -3,14 +3,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="5dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/control_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight=".03"
+        android:layout_weight=".05"
         android:orientation="horizontal"
 
         >
@@ -25,20 +25,23 @@
             <TextView
                 android:id="@+id/pref_tv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="⋮"
+                android:textColor="@color/color_titles"
                 android:textSize="30dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
 
-            <ImageView
-                android:id="@+id/theme_iv"
+                />
+
+            <Button
+                android:id="@+id/frac_button"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:src="@android:drawable/ic_menu_camera"
+                android:text=".0"
 
                 />
 
@@ -54,15 +57,19 @@
             <TextView
                 android:id="@+id/beat_count_title"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:gravity="center"
-                android:text="Beat Count" />
+                android:text="Beat Count"
+                android:textColor="@color/color_titles"
+                android:textStyle="italic"
+
+                />
 
             <TextView
                 android:id="@+id/beat_count_tv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
@@ -83,17 +90,19 @@
             <TextView
                 android:id="@+id/elapsed_title"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:gravity="center"
                 android:text="Elapsed (s)"
+                android:textColor="@color/color_titles"
+                android:textStyle="italic"
 
                 />
 
             <Chronometer
                 android:id="@+id/elapsed"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
@@ -114,10 +123,18 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/display_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight=".06"
+        android:orientation="horizontal"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/display_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".05"
         android:orientation="horizontal"
 
         >
@@ -132,19 +149,20 @@
             <TextView
                 android:id="@+id/bpm2_title"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_weight=".1"
                 android:gravity="left"
                 android:text="Last 2"
-
-                />
+                android:textColor="@color/color_titles"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/bpm2_tv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:text="0"
                 android:textSize="20sp"
 
@@ -161,10 +179,13 @@
             <TextView
                 android:id="@+id/bpm5_title"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_weight=".1"
                 android:gravity="left"
                 android:text="Last 5"
+                android:textColor="@color/color_titles"
+                android:textStyle="italic"
 
                 />
 
@@ -172,9 +193,9 @@
 
                 android:id="@+id/bpm5_tv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:text="0"
                 android:textSize="20sp"
 
@@ -188,7 +209,7 @@
         android:id="@+id/display2_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight=".06"
+        android:layout_weight=".05"
         android:orientation="horizontal"
 
         >
@@ -203,10 +224,13 @@
             <TextView
                 android:id="@+id/bpm10_title"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_weight=".1"
                 android:gravity="left"
                 android:text="Last 10"
+                android:textColor="@color/color_titles"
+                android:textStyle="italic"
 
                 />
 
@@ -214,9 +238,9 @@
 
                 android:id="@+id/bpm10_tv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:text="0"
                 android:textSize="20sp"
 
@@ -233,10 +257,13 @@
             <TextView
                 android:id="@+id/bpm20_title"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_weight=".1"
                 android:gravity="left"
                 android:text="Last 20"
+                android:textColor="@color/color_titles"
+                android:textStyle="italic"
 
                 />
 
@@ -244,9 +271,9 @@
 
                 android:id="@+id/bpm20_tv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:text="0"
                 android:textSize="20sp"
 

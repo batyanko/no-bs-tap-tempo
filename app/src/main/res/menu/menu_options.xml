@@ -2,18 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/show_fractions"
-        android:title="Show fractions" />
-    <item
-        android:id="@+id/menu_item_backup"
-        android:title="a" />
-    <item
-        android:id="@+id/menu_item_settings"
-        android:title="s" />
-    <item
-        android:id="@+id/menu_item_help"
-        android:title="d" />
-    <item
-        android:id="@+id/menu_item_about"
-        android:title="f" />
+        android:id="@+id/about"
+        android:title="About"
+
+        />
 </menu>

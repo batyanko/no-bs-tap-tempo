@@ -1,10 +1,10 @@
 package com.batyanko.nobstaptempo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Chronometer;
@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.text.DecimalFormatSymbols;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private TextView bpm5Tv;
     private TextView bpm10Tv;
     private TextView bpm20Tv;
+    private final char decSep = DecimalFormatSymbols.getInstance().getDecimalSeparator();
+    private final String decZero = String.format("0%s0", decSep);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +94,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
             refresh();
         });
+
+        Button fracButton = findViewById(R.id.frac_button);
+        fracButton.setOnClickListener(v -> {
+            boolean frac = pref.getBoolean("pref_fractions", false);
+            pref.edit().putBoolean("pref_fractions", !frac).apply();
+            refresh();
+        });
         init();
 
     }
@@ -98,23 +109,38 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         if (beatCount >= 2) {
             long bpm2l = 60000000000000L / ((bpm2[(pos2 - 1) % 2] - bpm2[(pos2) % 2]));
-            bpm2Tv.setText(String.format("%s%s", round(bpm2l), fraction(bpm2l)));
-
+            bpm2Tv.setText(round(bpm2l));
+        } else if (pref.getBoolean("pref_fractions", false)) {
+            bpm2Tv.setText(decZero);
+        } else {
+            bpm2Tv.setText("0");
         }
 
         if (beatCount >= 5) {
             long bpm5l = 240000000000000L / ((bpm5[(pos5 - 1) % 5] - bpm5[(pos5) % 5]));
-            bpm5Tv.setText(String.format("%s%s", round(bpm5l), fraction(bpm5l)));
+            bpm5Tv.setText(round(bpm5l));
+        } else if (pref.getBoolean("pref_fractions", false)) {
+            bpm5Tv.setText(decZero);
+        } else {
+            bpm5Tv.setText("0");
         }
 
         if (beatCount >= 10) {
             long bpm10l = 540000000000000L / ((bpm10[(pos10 - 1) % 10] - bpm10[(pos10) % 10]));
-            bpm10Tv.setText(String.format("%s%s", round(bpm10l), fraction(bpm10l)));
+            bpm10Tv.setText(round(bpm10l));
+        } else if (pref.getBoolean("pref_fractions", false)) {
+            bpm10Tv.setText(decZero);
+        } else {
+            bpm10Tv.setText("0");
         }
 
         if (beatCount >= 20) {
             long bpm20l = 1140000000000000L / ((bpm20[(pos20 - 1) % 20] - bpm20[(pos20) % 20]));
-            bpm20Tv.setText(String.format("%s%s", round(bpm20l), fraction(bpm20l)));
+            bpm20Tv.setText(round(bpm20l));
+        } else if (pref.getBoolean("pref_fractions", false)) {
+            bpm20Tv.setText(decZero);
+        } else {
+            bpm20Tv.setText("0");
         }
 
     }
@@ -122,51 +148,28 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     //    Round BPM as double, divide by 1000 and convert to string
     private String round(long bpm) {
         double bpmDouble = bpm;
-        bpmDouble /= 1000;
-        return String.valueOf(Math.round(bpmDouble));
-    }
-
-    private String fraction(long bpm) {
         if (!pref.getBoolean("pref_fractions", false)) {
-            return "";
+            bpmDouble /= 1000;
+            return String.valueOf(Math.round(bpmDouble));
+        } else {
+            bpmDouble /= 100;
+            String round = String.valueOf(Math.round(bpmDouble));
+            return String.format("%s%s%s", round.substring(0, round.length() - 1), decSep, round.substring(round.length() - 1));
         }
-//        double remainder = (double) bpm % 1000;
-        String bpmString = String.valueOf(bpm);
-        String fraction = bpmString.substring(bpmString.length() - 3);
-        Log.d("BPM", String.valueOf(bpm));
-        Log.d("REMAINDER", fraction.substring(0, 2));
-        return "," + fraction.substring(0, 2);
     }
 
+// TODO watch for abnormal behavior due to lack of re-init
 //    @Override
-//    protected void onResume() {
-//        super.onResume();
+//    protected void onRestart() {
+//        super.onRestart();
 //        init();
 //    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        init();
-    }
 
     // Initialize/reset values
     private void init() {
 
         TextView beatCountTv = findViewById(R.id.beat_count_tv);
         beatCountTv.setText("0");
-
-        TextView bpm2Tv = findViewById(R.id.bpm2_tv);
-        bpm2Tv.setText("0");
-
-        TextView bpm5Tv = findViewById(R.id.bpm5_tv);
-        bpm5Tv.setText("0");
-
-        TextView bpm10Tv = findViewById(R.id.bpm10_tv);
-        bpm10Tv.setText("0");
-
-        TextView bpm20Tv = findViewById(R.id.bpm20_tv);
-        bpm20Tv.setText("0");
 
         tsNow = 0;
         beatCount = 0;
@@ -182,28 +185,18 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         pos5 = 0;
         pos10 = 0;
         pos20 = 0;
+
+        refresh();
     }
 
 
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
         int itemId = menuItem.getItemId();
-        if (itemId == R.id.show_fractions) {
-            boolean frac = pref.getBoolean("pref_fractions", false);
-            Log.d("FRAC", String.valueOf(frac));
-            pref.edit().putBoolean("pref_fractions", !frac).apply();
-            refresh();
-            return true;
-        } else if (itemId == R.id.menu_item_backup) {
-            return true;
-        } else if (itemId == R.id.menu_item_settings) {
-            return true;
-        } else if (itemId == R.id.menu_item_help) {
-            return true;
-        } else if (itemId == R.id.menu_item_about) {
-            return true;
+        if (itemId == R.id.about) {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
         }
-        return false;
+        return true;
     }
-
 }

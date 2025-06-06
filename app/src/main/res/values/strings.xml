@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">No BS Tap Tempo</string>
+
+    <string name="help_about1">About</string>
+    <string name="help_what_is">This app measures BPM (Beats Per Minute),
+        measuring the frequency of your taps on the screen.</string>
+    <string name="help_how">4 displays to average last 2, 5, 10 and 20 taps.</string>
+    <string name="help_about2">Any suggestions and feedback welcome - just write me.
+        \nI read all e-mail ;)</string>
+    <string name="help_about3">E-mail\nbatyankodev@gmail.com</string>
+    <string name="help_about4">Web\nwww.batyanko.com</string>
+    <string name="help_about5">Github\nhttps://github.com/batyanko/no-bs-tap-tempo</string>
+    <string name="help_license1">License</string>
+    <string name="help_license2">No BS Tap Tempo is being developed under the Apache 2.0 license http://www.apache.org/licenses/LICENSE-2.0 .
+        Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</string>
+    <string name="help_license3">Parts of code from other developers have been used and annotated where necessary.
+        These parts are licensed under either Apache 2.0 or CC BY-SA 3.0 http://creativecommons.org/licenses/by-sa/3.0</string>
+    <string name="help_privacy1">Privacy Policy</string>
+    <string name="help_privacy2">The No BS Tap Tempo app:</string>
+    <string name="help_privacy3">- stores no user data.</string>
+    <string name="help_privacy4">- uses no internet connection.</string>
+    <string name="help_privacy5"> Ads are BS, therefore The No BS Tap Tempo app shows no ads.</string>
 </resources>
