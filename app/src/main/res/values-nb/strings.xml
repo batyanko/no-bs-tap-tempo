@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">No BS Tap Tempo</string>
+
+    <string name="help_about1">Om No BS Tap Tempo</string>
+    <string name="help_what_is">Denne appen måler BPM (Beats Per Minute),
+ målt ut fra hvor ofte du trykker på skjermen.</string>
+    <string name="help_how">4 skjermer viser gjennomsnittet av de siste 2, 5, 10 og 20 trykk.</string>
+    <string name="help_about2">Appen ble skapt av batyanko.
+        Vær så snill og kontaktere meg med din spørsmål og Bug-reports! Jeg leser all e-post ;)</string>
+    <string name="help_license1">Lisens</string>
+    <string name="help_license2">StrokeRateCoach blir utviklet under Apache 2.0-lisensen http://www.apache.org/licenses/LICENSE-2.0.
+        Med mindre det kreves av gjeldende lov eller avtalt skriftlig, programvare
+        distribuert under lisensen er distribuert på en "AS IS" BASIS,
+        UTEN GARANTIER ELLER BETINGELSER AV NOEN SLAG, enten uttrykks eller underforstått.
+        Se Lisensen for det bestemte språket som styrer tillatelser og
+        begrensninger under lisensen.</string>
+    <string name="help_privacy1">Personvernregler</string>
+    <string name="help_privacy2">No BS Tap Tempo:</string>
+    <string name="help_privacy3">- lagrer ingen brukerdata.</string>
+    <string name="help_privacy4">- bruker ingen internettforbindelse.</string>
+    <string name="help_privacy5"> Annonser er BS, derfor viser No BS Tap Tempo-appen ingen annonser.</string>
+    <string name="beat_count_title">Antall</string>
+    <string name="elapsed_title">Elapsed (s)</string>
+    <string name="reset_title">Reset</string>
+    <string name="last_2_title">Siste 2</string>
+    <string name="last_5_title">Siste 5</string>
+    <string name="last_10_title">Siste 10</string>
+    <string name="last_20_title">Siste 20</string>
+    <string name="hit_me_text">Trykk her!</string>
+</resources>

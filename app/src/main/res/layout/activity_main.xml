@@ -30,7 +30,7 @@
                 android:gravity="center"
                 android:text="⋮"
                 android:textColor="@color/color_titles"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
 
                 />
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:gravity="center"
-                android:text="Beat Count"
+                android:text="@string/beat_count_title"
                 android:textColor="@color/color_titles"
                 android:textStyle="italic"
 
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:gravity="center"
-                android:text="Elapsed (s)"
+                android:text="@string/elapsed_title"
                 android:textColor="@color/color_titles"
                 android:textStyle="italic"
 
@@ -117,7 +117,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".25"
             android:gravity="center"
-            android:text="Reset" />
+            android:text="@string/reset_title" />
 
 
     </LinearLayout>
@@ -131,6 +131,7 @@
         />
 
     <LinearLayout
+        android:baselineAligned="false"
         android:id="@+id/display_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -152,8 +153,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_weight=".1"
-                android:gravity="left"
-                android:text="Last 2"
+                android:gravity="start"
+                android:text="@string/last_2_title"
                 android:textColor="@color/color_titles"
                 android:textStyle="italic" />
 
@@ -183,7 +184,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_weight=".1"
                 android:gravity="left"
-                android:text="Last 5"
+                android:text="@string/last_5_title"
                 android:textColor="@color/color_titles"
                 android:textStyle="italic"
 
@@ -206,6 +207,7 @@
 
 
     <LinearLayout
+        android:baselineAligned="false"
         android:id="@+id/display2_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -228,7 +230,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_weight=".1"
                 android:gravity="left"
-                android:text="Last 10"
+                android:text="@string/last_10_title"
                 android:textColor="@color/color_titles"
                 android:textStyle="italic"
 
@@ -261,7 +263,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_weight=".1"
                 android:gravity="left"
-                android:text="Last 20"
+                android:text="@string/last_20_title"
                 android:textColor="@color/color_titles"
                 android:textStyle="italic"
 
@@ -287,7 +289,7 @@
         android:layout_height="0dp"
         android:layout_weight=".8"
         android:gravity="center"
-        android:text="Hit me!"
+        android:text="@string/hit_me_text"
 
         />
 </LinearLayout>

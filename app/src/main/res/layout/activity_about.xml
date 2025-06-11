@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp"
-        tools:context="com.batyanko.strokeratecoach.HelpActivity">
+        tools:context="com.batyanko.nobstaptempo.AboutActivity">
 
         <TextView
             android:layout_width="match_parent"
@@ -118,16 +118,6 @@
             android:autoLink="web"
             android:paddingBottom="5dp"
             android:text="@string/help_license2"
-            android:textSize="@dimen/text_size_small"
-
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:paddingBottom="25dp"
-            android:text="@string/help_license3"
             android:textSize="@dimen/text_size_small"
 
             />

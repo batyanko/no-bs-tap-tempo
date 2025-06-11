@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         Button fracButton = findViewById(R.id.frac_button);
         fracButton.setOnClickListener(v -> {
-            boolean frac = pref.getBoolean("pref_fractions", false);
-            pref.edit().putBoolean("pref_fractions", !frac).apply();
+            boolean frac = pref.getBoolean(getString(R.string.pref_fractions), false);
+            pref.edit().putBoolean(getString(R.string.pref_fractions), !frac).apply();
             refresh();
         });
         init();
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         if (beatCount >= 2) {
             long bpm2l = 60000000000000L / ((bpm2[(pos2 - 1) % 2] - bpm2[(pos2) % 2]));
             bpm2Tv.setText(round(bpm2l));
-        } else if (pref.getBoolean("pref_fractions", false)) {
+        } else if (pref.getBoolean(getString(R.string.pref_fractions), false)) {
             bpm2Tv.setText(decZero);
         } else {
             bpm2Tv.setText("0");
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         if (beatCount >= 5) {
             long bpm5l = 240000000000000L / ((bpm5[(pos5 - 1) % 5] - bpm5[(pos5) % 5]));
             bpm5Tv.setText(round(bpm5l));
-        } else if (pref.getBoolean("pref_fractions", false)) {
+        } else if (pref.getBoolean(getString(R.string.pref_fractions), false)) {
             bpm5Tv.setText(decZero);
         } else {
             bpm5Tv.setText("0");
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         if (beatCount >= 10) {
             long bpm10l = 540000000000000L / ((bpm10[(pos10 - 1) % 10] - bpm10[(pos10) % 10]));
             bpm10Tv.setText(round(bpm10l));
-        } else if (pref.getBoolean("pref_fractions", false)) {
+        } else if (pref.getBoolean(getString(R.string.pref_fractions), false)) {
             bpm10Tv.setText(decZero);
         } else {
             bpm10Tv.setText("0");
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         if (beatCount >= 20) {
             long bpm20l = 1140000000000000L / ((bpm20[(pos20 - 1) % 20] - bpm20[(pos20) % 20]));
             bpm20Tv.setText(round(bpm20l));
-        } else if (pref.getBoolean("pref_fractions", false)) {
+        } else if (pref.getBoolean(getString(R.string.pref_fractions), false)) {
             bpm20Tv.setText(decZero);
         } else {
             bpm20Tv.setText("0");
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     //    Round BPM as double, divide by 1000 and convert to string
     private String round(long bpm) {
         double bpmDouble = bpm;
-        if (!pref.getBoolean("pref_fractions", false)) {
+        if (!pref.getBoolean(getString(R.string.pref_fractions), false)) {
             bpmDouble /= 1000;
             return String.valueOf(Math.round(bpmDouble));
         } else {

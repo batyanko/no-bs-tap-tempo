@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">No BS Tap Tempo</string>
+
+    <string name="help_about1">За приложението</string>
+    <string name="help_about2">Приложението направено от batyanko.
+        За оплаквания от бъгове (чета всички Е-мейли ;)</string>
+    <string name="help_what_is">Приложението мери удари/обороти в минута (темпо / BPM),
+        чрез повторно натискане на дисплея.</string>
+    <string name="help_how">4 датчика, показващи средно удари/темпо за последните 2, 5, 10 и 20 удара.</string>
+    <string name="help_license1">Лиценз</string>
+    <string name="help_license2">StrokeRateCoach се разработва с отворен лиценз Apache 2.0 http://www.apache.org/licenses/LICENSE-2.0.
+    Освен ако не се изисква от приложимото законодателство или ако не е писмено съгласувано, софтуерът,
+разпространяван съгласно лиценза, се разпространява такъв, какъвто е,
+БЕЗ ГАРАНЦИИ ИЛИ УСЛОВИЯ ОТ КАКЪВТО И ДА Е ВИД, изрични или подразбиращи се.
+Вижте Лиценза за конкретния език, уреждащ разрешенията и
+ограничения по лиценза.</string>
+    <string name="help_privacy1">Правила за поверителност</string>
+    <string name="help_privacy2">No BS Tap Tempo:</string>
+    <string name="help_privacy3">- Не събира потребителски данни.</string>
+    <string name="help_privacy4">- Не се свързва с интернет.</string>
+    <string name="help_privacy5"> Рекламите са пълна глупост, затова No BS Tap Tempo не показва реклами.</string>
+    <string name="beat_count_title">Beat Count</string>
+    <string name="elapsed_title">Време (s)</string>
+    <string name="reset_title">Рестарт</string>
+    <string name="last_2_title">Посл. 2</string>
+    <string name="last_5_title">Посл. 5</string>
+    <string name="last_10_title">Посл. 10</string>
+    <string name="last_20_title">Посл. 20</string>
+    <string name="hit_me_text">Цъкай тука!</string>
+</resources>

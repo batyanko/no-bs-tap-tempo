@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">No BS Tap Tempo</string>
+
+    <string name="help_about1">Über No BS Tap Tempo</string>
+    <string name="help_what_is">Diese App misst BPM (Beats Per Minute),
+        durch die Frequenz deiner Taps auf dem Bildschirm.</string>
+    <string name="help_how">4 Anzeigen durchnittlich für die letzten 2, 5, 10 und 20 Taps.</string>
+    <string name="help_about2">Jede Anregung und jedes Feedback ist willkommen - schreib mir einfach.
+        \nIch lese alle E-Mails ;)</string>
+    <string name="help_license1">Lizenz</string>
+    <string name="help_license2">StrokeRateCoach wird mit der Apache 2.0 Lizenz http://www.apache.org/licenses/LICENSE-2.0 entwickelt.
+    Sofern nicht gesetzlich vorgeschrieben oder schriftlich vereinbart, Software
+unter der Lizenz vertrieben wird auf einer "Istzustand" Basis verteilt,
+OHNE GEWÄHRLEISTUNGEN ODER BEDINGUNGEN JEGLICHER ART, weder ausdrücklich noch stillschweigend.
+Weitere Informationen finden Sie in der Lizenz für die spezifische Sprache für Berechtigungen und
+Einschränkungen unter der Lizenz.</string>
+    <string name="help_privacy1">Datenschutz-Bestimmungen</string>
+    <string name="help_privacy2">No BS Tap Tempo:</string>
+    <string name="help_privacy3">- speichert keine Nutzerdaten.</string>
+    <string name="help_privacy4">- verwendet keine Internetverbindung.</string>
+    <string name="help_privacy5"> Anzeigen sind BS, deshalb zeigt die App keine Anzeigen.</string>
+    <string name="beat_count_title">Schlagzahl</string>
+    <string name="elapsed_title">Dauer (s)</string>
+    <string name="reset_title">Reset</string>
+    <string name="last_2_title">Letzte 2</string>
+    <string name="last_5_title">Letzte 5</string>
+    <string name="last_10_title">Letzte 10</string>
+    <string name="last_20_title">Letzte 20</string>
+    <string name="hit_me_text">Hier tippen!</string>
+</resources>
