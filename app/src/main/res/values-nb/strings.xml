@@ -4,11 +4,15 @@
     <string name="help_about1">Om No BS Tap Tempo</string>
     <string name="help_what_is">Denne appen måler BPM (Beats Per Minute),
  målt ut fra hvor ofte du trykker på skjermen.</string>
-    <string name="help_how">4 skjermer viser gjennomsnittet av de siste 2, 5, 10 og 20 trykk.</string>
+    <string name="help_what_is2">4 skjermer viser gjennomsnittet av de siste 2, 5, 10 og 20 trykk.</string>
     <string name="help_about2">Appen ble skapt av batyanko.
+        \nIdee fra HSTempo av Hideki Saito:
+        \nhttps://play.google.com/store/apps/details?id=hsware.HSTempo
+    </string>
+    <string name="help_about2_feedback">
         Vær så snill og kontaktere meg med din spørsmål og Bug-reports! Jeg leser all e-post ;)</string>
     <string name="help_license1">Lisens</string>
-    <string name="help_license2">StrokeRateCoach blir utviklet under Apache 2.0-lisensen http://www.apache.org/licenses/LICENSE-2.0.
+    <string name="help_license2">No BS Tap Tempo blir utviklet under Apache 2.0-lisensen http://www.apache.org/licenses/LICENSE-2.0.
         Med mindre det kreves av gjeldende lov eller avtalt skriftlig, programvare
         distribuert under lisensen er distribuert på en "AS IS" BASIS,
         UTEN GARANTIER ELLER BETINGELSER AV NOEN SLAG, enten uttrykks eller underforstått.
